@@ -47,8 +47,8 @@ ul {
     font-family: var(--font-family);
     overflow: hidden;
 
-    &::before,
-    &::after {
+    &:not(:hover)::before,
+    &:hover::after {
       content: "";
       display: block;
       position: absolute;
@@ -63,13 +63,14 @@ ul {
       pointer-events: none;
     }
 
-    &::after {
+    &:hover::after {
       background: linear-gradient(
         0deg,
         #241f24 1.04%,
         #5b5b5b42 6.99%,
         #bbbac000 12.29%
       );
+      transform: rotate(360deg);
     }
 
     @media (min-width: 1200px) {
